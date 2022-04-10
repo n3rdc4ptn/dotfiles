@@ -12,10 +12,17 @@ source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-
+###### NVM ######
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+
+
+
+
+###### CONDA ######
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -31,33 +38,45 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
 conda deactivate
 conda activate native
+
+
+
+####### gcloud #######
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/moritzreich/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/moritzreich/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/moritzreich/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/moritzreich/google-cloud-sdk/completion.zsh.inc'; fi
 
+
+
+###### terraform ######
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
+
+##### Ruby Path #####
 export PATH="/opt/homebrew/opt/ruby@2.7/bin:$PATH"
 
 
+##### Rustup #####
 alias rustdoc="rustup doc --toolchain=stable-x86_64-apple-darwin"
 
-
+##### Ruby Path #####
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
 
 export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 
+##### Yarn Path #####
+
 export PATH="$(yarn global bin):$PATH"
 
-#alias pj="cd ~/projects"
+##### Project Shortcut ######
 
 pj() {
     cd ~/projects/$1
