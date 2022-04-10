@@ -1,0 +1,15 @@
+Host alpha
+  HostName alpha.srv.minest.dev
+  User root
+  Port 22
+  IdentityFile ~/.ssh/id_rsa
+
+Host jim
+  HostName jim.mine.st
+  User root
+  Port 22
+  IdentityFile ~/.ssh/id_rsa
+
+Host *
+  User root
+  Compression yes
