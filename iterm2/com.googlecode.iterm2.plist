@@ -14,6 +14,8 @@
 	<true/>
 	<key>Default Bookmark Guid</key>
 	<string>AFD643C9-142D-4A50-8B24-11F5F725637C</string>
+	<key>DimInactiveSplitPanes</key>
+	<false/>
 	<key>GlobalKeyMap</key>
 	<dict>
 		<key>0x19-0x60000</key>
